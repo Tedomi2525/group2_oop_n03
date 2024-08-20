@@ -15,3 +15,4 @@ public class BaiTap3 {
 		System.out.println(n.i);
 	}
 }
+//n.i = 15
