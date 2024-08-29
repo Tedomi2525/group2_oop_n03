@@ -18,3 +18,11 @@ public class App {
         System.out.println(nnCollection);
     }
 }
+// Khi chạy ta nhận được giá trị của biến, cần 1 phương thức ghi đè String để nó có thể trả về biến
+// Ko thì nó sẽ chạy ra địa chỉ của biến 
+// Ví dụ: 
+// NNCollection nnCollection = new NNCollection();
+// nnCollection.insert(new NameNumber("Quan", "0374864127"));
+// String number = nnCollection.findNumber("Quan"); 
+// System.out.println("My number is: " +number);
+
