@@ -1,51 +1,22 @@
-package midterm1;
+package group2_oop_n03.midterm1;
 
 // Lớp DiscreteSignal kế thừa Signal
 public class DiscreteSignal implements Signal {
-    private double amplitude;
-    private double frequency;
-    private double period;
-    private double speed; // Vận tốc truyền sóng
-
-    // Constructor
-    public DiscreteSignal(double amplitude, double frequency, double period, double speed) {
-        this.amplitude = amplitude;
-        this.frequency = frequency;
-        this.period = period;
-        this.speed = speed;
+    private int delta(int n) {
+        return n == 0 ? 1 : 0;
+    }
+    @Override
+    public double calculateSignal(int n) {
+        double result = 0;
+        // Giả sử x(k) được định nghĩa trong phạm vi từ -10 đến 10
+        for (int k = -10; k <= 10; k++) {
+            result += x(k) * delta(n - k);
+        }
+        return result;
     }
 
-    // Triển khai các phương thức từ giao diện Signal
-    @Override
-    public double getAmplitude() {
-        return amplitude;
-    }
-
-    @Override
-    public double getFrequency() {
-        return frequency;
-    }
-
-    @Override
-    public double getPeriod() {
-        return period;
-    }
-
-    @Override
-    public double getWavelength() {
-        return speed / frequency; // Công thức tính bước sóng
-    }
-
-    @Override
-    public String getSignalType() {
-        return "Discrete Signal";
-    }
-
-    @Override
-    public void describe() {
-        System.out.println("This is a discrete signal with amplitude: " + amplitude +
-                           ", frequency: " + frequency +
-                           ", period: " + period +
-                           ", and wavelength: " + getWavelength());
+    // Định nghĩa hàm x(k): sử dụng sin(k) làm ví dụ
+    private double x(int k) {
+        return Math.sin(k);
     }
 }

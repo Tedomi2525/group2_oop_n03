@@ -1,4 +1,4 @@
-package midterm2;
+package group2_oop_n03.midterm1;
 
 public class Radar implements Signal {
 
