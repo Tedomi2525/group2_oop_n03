@@ -1,15 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="javax.servlet.http.HttpSession"%>
-
-<%
-String tenNguoiDungQuanLy = (String) session.getAttribute("TenNguoiDungQuanLy");
-
-if (tenNguoiDungQuanLy == null) {
-	response.sendRedirect("DangNhap.jsp");
-}
-%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +11,29 @@ if (tenNguoiDungQuanLy == null) {
 		font-family: Arial, Helvetica, sans-serif;
 		margin: 0;
 		padding: 0;
-		background-color: #f0f0f0;
+		position: relative;
+	}
+
+	body::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: url("/deploy/hinhAnh/8a.jpg") center/cover no-repeat;
+		z-index: -2;
+	}
+
+	body::after {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.3); 
+		z-index: -1;
 	}
 
 	.header {
