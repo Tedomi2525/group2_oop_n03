@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,12 +8,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Đăng ký mượn sách</title>
 <style>
-/* Đặt font chung */
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	background-color: #f5f5f5;
 	margin: 0;
 	padding: 0;
+	position: relative;
+}
+
+body::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url("/deploy/hinhAnh/8a.jpg") center/cover no-repeat;
+	z-index: -2;
+}
+
+body::after {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: -1;
 }
 
 .header {
@@ -194,7 +216,8 @@ footer .btn:hover {
 	<div class="container">
 		<div class="form-container">
 			<h2>Thông tin sinh viên</h2>
-			<form action="/deploy/MuonTra/quaTrinhMuonTra.jsp" method="post" accept-charset="UTF-8">
+			<form action="/deploy/MuonTra/quaTrinhMuonTra.jsp" method="post"
+				accept-charset="UTF-8">
 				<div class="form-group">
 					<label for="MaMuon">Mã Mượn:</label> <input type="text" id="MaMuon"
 						name="MaMuon" placeholder="Nhập mã mượn" required>
@@ -236,7 +259,7 @@ footer .btn:hover {
 						if (sachDaChon != null) {
 							request.getSession().setAttribute("sachDaChon", sachDaChon);
 							for (String thongTinSach : sachDaChon) {
-								String[] chiTietSach = thongTinSach.split(","); 
+								String[] chiTietSach = thongTinSach.split(",");
 								String maSach = chiTietSach[0];
 								String tenSach = chiTietSach[1];
 								String tacGia = chiTietSach[2];

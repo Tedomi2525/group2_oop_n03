@@ -27,42 +27,42 @@ public class DangNhapServlet extends HttpServlet {
 		String tenNguoiDung = request.getParameter("TenNguoiDung");
 		String matkhau = request.getParameter("Matkhau");
 
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
-		ResultSet resultSet = null;
+		Connection cn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
 
 		try {
-			connection = JDBCConnection.getJDBConnection();
+			cn = JDBCConnection.getJDBConnection();
 			String sql = "SELECT * FROM nguoiquanly WHERE TenNguoiDung = ? AND Matkhau = ?";
-			preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, tenNguoiDung);
-			preparedStatement.setString(2, matkhau);
-			resultSet = preparedStatement.executeQuery();
+			ps = cn.prepareStatement(sql);
+			ps.setString(1, tenNguoiDung);
+			ps.setString(2, matkhau);
+			rs = ps.executeQuery();
 
-			if (resultSet.next()) {
+			if (rs.next()) {
 				HttpSession session = request.getSession();
 				session.setAttribute("TenNguoiDungQuanLy", tenNguoiDung);
 				response.sendRedirect(request.getContextPath() + "/ThuVien/thuVien.jsp");
 			} else {
-				response.sendRedirect(request.getContextPath() + "/NguoiQuanLy/DangNhap.jsp?error=invalid");
+				response.sendRedirect(request.getContextPath() + "/NguoiQuanLy/QuaTrinhDangNhap.jsp?error=invalid");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			response.sendRedirect(request.getContextPath() + "/NguoiQuanLy/DangNhap.jsp?error=sql");
+			response.sendRedirect(request.getContextPath() + "/deploy/TrangLuaChon.jsp?error=sql");
 		} finally {
-			if (resultSet != null)
+			if (rs != null)
 				try {
-					resultSet.close();
+					rs.close();
 				} catch (SQLException ignore) {
 				}
-			if (preparedStatement != null)
+			if (ps != null)
 				try {
-					preparedStatement.close();
+					ps.close();
 				} catch (SQLException ignore) {
 				}
-			if (connection != null)
+			if (cn != null)
 				try {
-					connection.close();
+					cn.close();
 				} catch (SQLException ignore) {
 				}
 		}

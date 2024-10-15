@@ -1,79 +1,63 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Đăng nhập/Đăng kí</title>
-<style>
-	body {
-		font-family: Arial, Helvetica, sans-serif;
-		margin: 0;
-		padding: 0;
-		background-color: #f0f0f0;
-	}
+<title>Trang đăng nhập</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords">
 
-	.header {
-		background-color: #333;
-		color: white;
-		position: relative;
-		text-align: center;
-		padding: 20px 0;
-	}
+<link href="/deploy/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
 
-	.header h1 {
-		margin: 0;
-		font-size: 44px;
-	}
+<link rel="stylesheet" href="/deploy/style.css" type="text/css" media="all">
 
-	.container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 80vh;
-	}
+<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 
-	.menu {
-		background-color: white;
-		padding: 40px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-		border-radius: 8px;
-		text-align: center;
-	}
-
-	.menu h2 {
-		margin-bottom: 30px;
-		color: #333;
-	}
-
-	.menu a {
-		display: block;
-		text-decoration: none;
-		margin: 10px 0;
-		padding: 15px 25px;
-		background-color: #4876FF;
-		color: white;
-		border-radius: 5px;
-		transition: background-color 0.3s;
-	}
-
-	.menu a:hover {
-		background-color: #4169E1;
-	}
-</style>
 </head>
 <body>
-  	<div class="header">
-    	<h1>Hệ thống quản lý thư viện</h1>
-  	</div>
-  	<div class="container">
-    	<div class="menu">
-      		<h2>Chọn chức năng</h2>
-      		<a href="/deploy/NguoiQuanLy/DangNhap.jsp">Đăng nhập</a>
-      		<a href="/deploy/NguoiQuanLy/DangKy.jsp">Đăng kí</a>
-    	</div>
-  	</div>
+
+	<h1>Hệ thống quản lý thư viện</h1>
+
+	<div class="w3layoutscontaineragileits">
+	<h2>Đăng nhập</h2>
+		<form action="/deploy/DangNhapServlet" method="post">
+			<input type="text" id="TenNguoiDung" name="TenNguoiDung" placeholder="Tên tài khoản" required>
+			<input type="password" id="Matkhau" name="Matkhau" placeholder="Mật khẩu" required>
+			<ul class="agileinfotickwthree">
+				<li>
+					<input type="checkbox" id="brand1" value="">
+					<label for="brand1"><span></span>Ghi nhớ mật khẩu</label>
+					<a href="#">Quên mật khẩu?</a>
+				</li>
+			</ul>
+			<div class="aitssendbuttonw3ls">
+				<input type="submit" value="Đăng nhập">
+				<p> Để tạo tài khoản mới <span>→</span> <a class="w3_play_icon1" href="/deploy/NguoiQuanLy/DangKy.jsp"> Ấn vào đây</a></p>
+				<div class="clear"></div>
+			</div>
+		</form>
+	</div>
+	<script>
+		$(document).ready(function() {
+		$('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in'
+		});
+																		
+		});
+	</script>
+
 </body>
 </html>
 

@@ -13,8 +13,29 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
 	padding: 0;
-	background-color: #f4f4f4;
-	height: 8000px;
+	position: relative;
+}
+
+body::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url("/deploy/hinhAnh/8a.jpg") center/cover no-repeat;
+	z-index: -2;
+}
+
+body::after {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: -1;
 }
 
 .header {
@@ -138,7 +159,8 @@ footer .btn:hover {
 		<div class="head">
 			<h2>Danh sách sách</h2>
 			<h3>
-				<a href="/deploy/ThuVien/themSach.jsp" class="btn2">Thêm sách mới</a>
+				<a href="/deploy/ThuVien/themSach.jsp" class="btn2">Thêm sách
+					mới</a>
 			</h3>
 		</div>
 
@@ -181,8 +203,7 @@ footer .btn:hover {
 						<input type="hidden" name="maSach" value="<%=sach.getMaSach()%>">
 						<input type="hidden" name="hanhDong" value="delete"> <input
 							type="submit" value="Xóa" class="btn">
-					</form> <a
-					href="/deploy/ThuVien/suaSach.jsp?maSach=<%=sach.getMaSach()%>"
+					</form> <a href="/deploy/ThuVien/suaSach.jsp?maSach=<%=sach.getMaSach()%>"
 					class="btn">Sửa</a>
 				</td>
 			</tr>
