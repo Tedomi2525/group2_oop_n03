@@ -11,12 +11,33 @@
 <style>
 /* Đặt kiểu chung */
 body {
-	font-family: Arial, Helvetica, sans-serif;
-	margin: 0;
-	padding: 0;
-	height: 800px;
-	background-color: #f0f0f0;
-}
+		font-family: Arial, Helvetica, sans-serif;
+		margin: 0;
+		padding: 0;
+		position: relative;
+	}
+
+	body::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: url("/deploy/hinhAnh/8a.jpg") center/cover no-repeat;
+		z-index: -2;
+	}
+
+	body::after {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.3); 
+		z-index: -1;
+	}
 
 .header {
 	background-color: #333;
