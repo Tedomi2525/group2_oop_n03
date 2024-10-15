@@ -8,7 +8,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Đăng ký mượn sách</title>
 <style>
-/* Đặt font chung */
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
