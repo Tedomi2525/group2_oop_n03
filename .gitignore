@@ -1,0 +1,15 @@
+group2_oop_n03/deploy/src/main/webapp/
+deploy/build
+deploy/src/main/webapp/META-INF/MANIFEST.MF
+deploy/src/main/webapp/login.txt
+deploy/.settings/org.eclipse.wst.jsdt.ui.superType.name
+deploy/.settings/org.eclipse.wst.jsdt.ui.superType.container
+deploy/.settings/org.eclipse.wst.common.project.facet.core.xml
+deploy/.settings/org.eclipse.wst.common.component
+deploy/.settings/org.eclipse.jdt.core.prefs
+deploy/.settings/org.eclipse.core.resources.prefs
+deploy/.settings/.jsdtscope
+deploy/.project
+deploy/.classpath
+.project
+.classpath
